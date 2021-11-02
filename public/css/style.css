@@ -1,5 +1,5 @@
 body {
-    background-image: url("assets/img/bg-img.png");
+    background-image: url("../assets/img/bg-img.png");
     background-size: cover;
 }
 * {
@@ -8,7 +8,7 @@ body {
 
 /* navigation */
 .nav-link{
-    margin-left: 30px;
+    margin-left: 20px;
     font-weight: 600;
     color: #19345E;
 }
