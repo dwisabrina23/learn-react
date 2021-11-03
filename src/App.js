@@ -1,9 +1,8 @@
 import './App.css';
-import { mockToDo } from './mockData';
-import ToDoPage from './pages/ToDo/ToDoPage';
+import Home from './pages/Passenger/component/Home';
 function App() {
   return (
-    <ToDoPage todos={mockToDo}/>
+    <Home/>
   );
 }
 
