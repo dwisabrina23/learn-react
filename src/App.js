@@ -1,9 +1,9 @@
 import './App.css';
-import { mockUsers } from './mockData';
-import ProfilePage from './pages/Profile/ProfilePage';
+import { mockToDo } from './mockData';
+import ToDoPage from './pages/ToDo/ToDoPage';
 function App() {
   return (
-    <ProfilePage users={mockUsers} title="Profile Page"/>
+    <ToDoPage todos={mockToDo} title="To Do Page"/>
   );
 }
 
