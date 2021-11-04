@@ -2,7 +2,6 @@ import React ,{useState} from "react";
 import {v4 as uuidv4} from 'uuid';
 import './style.css'
 
-
 const AddTodo = ({addTodo}) => {
     const [title, setTitle] = useState()
     const handleSubmit = (e) => {
@@ -20,7 +19,8 @@ const AddTodo = ({addTodo}) => {
             addTodo(newTodo);
             console.log("new to do added")
         }
-        // alert("new to do added")a
+        // clear input after submit
+        setTitle("")
     }
 
     return(
