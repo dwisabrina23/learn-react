@@ -45,9 +45,9 @@ export default function ToDoPage(){
     return(
         <div className={styles.ToDoPage}>
             <AddTodo addTodo={handleAddTodo}/>
-            {todos.length>0 
+            {todos.length > 0 
                 ? todos.map((todo) => <Todo key={todo.id} todo={todo} removeTodo={handleRemoveTodo} handleChange={handleDoneCheckBox}/>)
-                : <p align="center">empty to do</p>
+                : <p align="center" style={{color:"gray"}}>empty to do &#128513;</p>
             }
         </div>
     )

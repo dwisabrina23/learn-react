@@ -3,11 +3,14 @@ import styles from './ToDoList.module.css';
 
 const Todo = ({todo, removeTodo, handleChange}) => {
     const handleDoneCheckBox=() => {
-        if(todo.done)
-            return null;
+        // if(todo.done)
+        //     return null;
+
         handleChange(todo.id)
-        alert("task is completed")
+        // alert("task is completed")
+        console.log("checkbox dipencet")
     }
+
     return(
         <div className={styles.ToDoList}>
             <input type="checkbox"
@@ -19,7 +22,7 @@ const Todo = ({todo, removeTodo, handleChange}) => {
                 <span 
                     className={styles.Delete}
                     onClick={()=>{removeTodo(todo.id)
-                    alert("task is removed")}}
+                    alert("remove to do?")}}
                 >
                     delete</span>
                 <hr/>

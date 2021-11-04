@@ -7,15 +7,22 @@ const AddTodo = ({addTodo}) => {
     const [title, setTitle] = useState()
     const handleSubmit = (e) => {
         e.preventDefault()
-        const newTodo = {
-            id: uuidv4(), 
-            title: title,
-            done: false
+        if(title === "" || title==null){
+            alert("to do cant be empty")
+            return;
+        }else{
+            console.log("isi title: " + title)
+            const newTodo = {
+                id: uuidv4(), 
+                title: title,
+                done: false
+            }
+            addTodo(newTodo);
+            console.log("new to do added")
         }
-        addTodo(newTodo)
-        alert("new to do added")
-        setTitle("")
+        // alert("new to do added")a
     }
+
     return(
         <div className="container-fluid center">
                 <div className="input-group">
