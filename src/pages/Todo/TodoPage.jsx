@@ -41,7 +41,6 @@ export default function ToDoPage(){
         setTodos(newTodoList)
     }
 
-
     return(
         <div className={styles.ToDoPage}>
             <AddTodo addTodo={handleAddTodo}/>

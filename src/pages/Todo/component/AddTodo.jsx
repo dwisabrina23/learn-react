@@ -29,7 +29,7 @@ const AddTodo = ({addTodo}) => {
                     <input className="form-control form-rounded"
                         // style={{border: "none"}}
                         type="text"
-                        value={title}
+                        value={title || ""}
                         onChange={(e) => setTitle(e.target.value)}
                         placeholder="Add To Do.."
                         required
