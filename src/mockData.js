@@ -1,22 +1,22 @@
 export const mockToDo = [ 
   {
     id: 1,
-    title: "Membuat Komponen",
+    title: "Masak untuk sarapan",
     completed: true,
   },
   {
     id: 2,
-    title: "Unit Testing",
+    title: "Bersih-bersih rumah",
     completed: false,
   },
   {
     id: 3,
-    title: "Setup Development Environment",
+    title: "Siram tanaman",
     completed: true,
   },
   {
     id: 4,
-    title: "Deploy ke server",
+    title: "Lanjut course Parsinta",
     completed: false,
   },
 ]

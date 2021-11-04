@@ -1,0 +1,8 @@
+h1{
+    text-align: center;
+    background: -webkit-linear-gradient(0deg, rgba(249,225,42,1) 40%, rgba(112,240,111,1) 50%, rgba(72,143,255,1) 90%);
+    -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+    /* background: rgb(249,225,42);
+    background: linear-gradient(90deg, rgba(249,225,42,1) 0%, rgba(112,240,111,1) 46%, rgba(72,143,255,1) 100%); */
+}
