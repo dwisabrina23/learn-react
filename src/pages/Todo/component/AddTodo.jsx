@@ -1,6 +1,6 @@
 import React ,{useState} from "react";
 import {v4 as uuidv4} from 'uuid';
-import styles from './ToDoList.module.css';
+import './style.css'
 
 
 const AddTodo = ({addTodo}) => {
@@ -17,18 +17,20 @@ const AddTodo = ({addTodo}) => {
         setTitle("")
     }
     return(
-        <div className={styles.AddTodo}>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Add To Do.."
-                    className={styles.FormInput}
-                    required
-                />
-                <input type="submit" style={{width:80, padding:10}}/>
-            </form>
+        <div className="container-fluid center">
+                <div className="input-group">
+                    <input className="form-control form-rounded"
+                        // style={{border: "none"}}
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Add To Do.."
+                        required
+                    />
+                    <span className="input-group-btn">
+                        <button className="btn btn-default rounded" type="submit" onClick={handleSubmit}>Submit</button>
+                    </span>
+                </div>
         </div>
     );
 }

@@ -1,5 +1,6 @@
-.TodoPage{
-    margin:auto;
-    width: fit-content;
-    justify-content: center;
+.ToDoPage{
+    margin: 30px;
+    /* background-color: violet; */
+    /* display: block; */
 }
+

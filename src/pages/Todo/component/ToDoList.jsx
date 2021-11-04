@@ -11,17 +11,17 @@ const Todo = ({todo, removeTodo, handleChange}) => {
     return(
         <div className={styles.ToDoList}>
             <input type="checkbox"
-                style={{margin:"0 10px"}}
+                className={styles.CheckBox}
                 checked={todo.done}
                 onChange={()=>handleDoneCheckBox()}
             />
-                <span style={todo.done?{textDecoration:"line-through"}:null}>{todo.title}</span>
+                <span style={todo.done?{textDecoration:"line-through", fontStyle:"italic", color:"gray"}:null}>{todo.title}</span>
                 <span 
                     className={styles.Delete}
                     onClick={()=>{removeTodo(todo.id)
                     alert("task is removed")}}
                 >
-                    X</span>
+                    delete</span>
                 <hr/>
         </div>
     )
