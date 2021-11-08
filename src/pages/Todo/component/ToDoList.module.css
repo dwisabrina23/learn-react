@@ -16,8 +16,10 @@
     border-color: rgb(209, 34, 34);
 }
 .ToDoList{
-    margin: 20px;
+    margin: auto;
+    margin-top: 10px;
     justify-content: center;
+    width: 80%;
 }
 
 .CheckBox{
