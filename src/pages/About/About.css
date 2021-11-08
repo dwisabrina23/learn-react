@@ -8,5 +8,10 @@
 }
 
 .pageTitle{
-    font-weight: 600;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.pageContent{
+    padding-top: 10px;
 }
