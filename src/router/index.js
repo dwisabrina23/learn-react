@@ -20,11 +20,11 @@ function Router(props) {
                 <About/>
             </Route> */}
             <Route exact path="/about-app">
-                <Navbar author={"About Author"} app={"About App"}/>
+                <Navbar/>
                 <AboutApp/>
             </Route>
             <Route exact path="/about-author">
-                <Navbar author={"About Author"} app={"About App"}/>
+                <Navbar/>
                 <AboutAuthor/>
             </Route>
             <Route path="*">
