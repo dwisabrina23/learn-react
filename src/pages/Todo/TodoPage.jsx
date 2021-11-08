@@ -42,13 +42,19 @@ export default function ToDoPage(){
     }
 
     return(
-        <div className={styles.ToDoPage}>
-            <AddTodo addTodo={handleAddTodo}/>
-            {todos.length > 0 
-                ? todos.map((todo) => <Todo key={todo.id} todo={todo} removeTodo={handleRemoveTodo} handleChange={handleDoneCheckBox}/>)
-                : <p align="center" style={{color:"gray"}}>empty to do &#128513;</p>
-            }
+        <div className={styles.TodoContainer}>
+            <div>
+                <h1 className={styles.AppTitle}>To Do App</h1>
+            </div>
+            <div className={styles.ToDoPage}>
+                <AddTodo addTodo={handleAddTodo}/>
+                {todos.length > 0 
+                    ? todos.map((todo) => <Todo key={todo.id} todo={todo} removeTodo={handleRemoveTodo} handleChange={handleDoneCheckBox}/>)
+                    : <p align="center" style={{color:"gray"}}>empty to do &#128513;</p>
+                }
+            </div>
         </div>
+        
     )
 
 }

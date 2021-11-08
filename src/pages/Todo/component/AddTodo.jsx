@@ -24,7 +24,7 @@ const AddTodo = ({addTodo}) => {
     }
 
     return(
-        <div className="container-fluid center">
+        <div className="container-fluid center input-title">
                 <div className="input-group">
                     <input className="form-control form-rounded"
                         // style={{border: "none"}}
