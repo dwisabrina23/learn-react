@@ -1,10 +1,10 @@
-import styles from './App.css';
-import ToDoPage from './pages/Todo/TodoPage';
+import './App.css';
+import FormRegister from './pages/Form/FormPage';
+
 function App() {
   return (
     <div className="App">
-      <h1 className={styles.AppTitle}>To Do App</h1>
-      <ToDoPage/>
+      <FormRegister/>
     </div>
   );
 }
