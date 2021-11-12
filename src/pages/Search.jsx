@@ -20,7 +20,7 @@ export default function Search() {
     }
   }
  
-  return (
+  return ( 
     <div>
       <h2>Cari Cerita</h2>
       <input onChange={e=> setValue(e.target.value)} type="text" placeholder="Tulis Cerita" />
