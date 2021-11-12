@@ -2,14 +2,14 @@ import { renderHook, act } from "@testing-library/react-hooks";
 import { useInputValue } from "./useInputValue";
 
 describe("when rendered", () => {
-  it("returns current initial value", () => {
+  test("returns current initial value", () => {
     const { result } = renderHook(
       () => useInputValue("Test string"));
     
     expect(result.current.value).toEqual("Test string");
   });
 
-  it("changes the value and uppercases it", () => {
+  test("changes the value and uppercases it", () => {
     const { result } = renderHook(
       () => useInputValue("Test string"));
     
@@ -17,7 +17,7 @@ describe("when rendered", () => {
     expect(result.current.value).toEqual("Updated");
   });
 
-  it("updates the value", () => {
+  test("updates the value", () => {
     const { 
       result, 
       rerender 
