@@ -1,15 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { checkTodo, removeTodo } from "../../../store/todoSlice";
 import styles from './ToDoList.module.css';
 import toast, {Toaster} from 'react-hot-toast';
 
-const Todo = ({todo, removeTodo, handleChange}) => {
+const Todo = (props) => {
+    const dispatch = useDispatch()
     const handleDoneCheckBox=() => {
-        // if(todo.done)
-        //     return null;
-        
-        handleChange(todo.id)
+        dispatch(checkTodo(id))
         console.log("checkbox dipencet")
     }
+    const {done, id, title} = props.todo
 
     return(
         <>
@@ -18,15 +19,15 @@ const Todo = ({todo, removeTodo, handleChange}) => {
 
                 <input type="checkbox"
                     className={styles.CheckBox}
-                    checked={todo.done}
+                    checked={done}
                     onChange={()=>handleDoneCheckBox()}
                 />
-                    <span style={todo.done?{textDecoration:"line-through", fontStyle:"italic", color:"gray"}:null}>{todo.title}</span>
+                    <span style={done?{textDecoration:"line-through", fontStyle:"italic", color:"gray"}:null}>{title}</span>
                     <span 
                         className={styles.Delete}
                         onClick={()=>{
                             toast.success('success to delete item')
-                            removeTodo(todo.id)
+                            dispatch(removeTodo(id))
                         }}
                     >
                         delete</span>

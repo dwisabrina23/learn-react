@@ -1,9 +1,16 @@
 import React ,{useState} from "react";
-import {v4 as uuidv4} from 'uuid';
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../../store/todoSlice";
 import './style.css'
 
-const AddTodo = ({addTodo}) => {
-    const [title, setTitle] = useState()
+const AddTodoItem = () => {
+    const [title, setTitle] = useState("")
+    const dispatch = useDispatch()
+
+    const onChange = (e) => {
+        setTitle(e.target.value)
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         if(title === "" || title==null){
@@ -11,16 +18,10 @@ const AddTodo = ({addTodo}) => {
             return;
         }else{
             console.log("isi title: " + title)
-            const newTodo = {
-                id: uuidv4(), 
-                title: title,
-                done: false
-            }
-            addTodo(newTodo);
+            dispatch(addTodo(title))
+            setTitle("")
             console.log("new to do added")
         }
-        // clear input after submit
-        setTitle("")
     }
 
     return(
@@ -30,7 +31,7 @@ const AddTodo = ({addTodo}) => {
                         // style={{border: "none"}}
                         type="text"
                         value={title || ""}
-                        onChange={(e) => setTitle(e.target.value)}
+                        onChange={onChange}
                         placeholder="Add To Do.."
                         required
                     />
@@ -41,4 +42,4 @@ const AddTodo = ({addTodo}) => {
         </div>
     );
 }
-export default AddTodo;
+export default AddTodoItem;

@@ -15,10 +15,6 @@ function Router(props) {
                 <Navbar/>
                 <ToDoPage/>
             </Route>
-            {/* <Route exact path="/about">
-                <Navbar author={"About Author"} app={"About App"}/>
-                <About/>
-            </Route> */}
             <Route exact path="/about-app">
                 <Navbar/>
                 <AboutApp/>
