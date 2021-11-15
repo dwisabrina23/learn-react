@@ -1,27 +1,30 @@
 import React from 'react';
 import {Switch, Route} from "react-router-dom";
-
-import Navbar from '../pages/Todo/component/Navbar';
-import ToDoPage from '../pages/Todo/TodoPage';
-// import About from '../pages/About/About';
-import AboutApp from '../pages/About/AboutApp';
-import AboutAuthor from '../pages/About/AboutAuthor';
+import Navbar from '../components/Navbar';
+import Home from '../pages/Home/HomePage';
 import NotFoundPage from '../pages/NotFound/NotFoundPage';
+import Contact from '../pages/Contact/Contact';
+import ReviewPage from '../pages/Review/ReviewPage';
+import News from '../pages/News/News';
 
 function Router(props) {
     return (
         <Switch>
             <Route exact path="/">
                 <Navbar/>
-                <ToDoPage/>
+                <Home/>
             </Route>
-            <Route exact path="/about-app">
+            <Route exact path="/contact-us">
                 <Navbar/>
-                <AboutApp/>
+                <Contact/>
             </Route>
-            <Route exact path="/about-author">
+            <Route exact path="/review">
                 <Navbar/>
-                <AboutAuthor/>
+                <ReviewPage/>
+            </Route>
+            <Route exact path="/news">
+                <Navbar/>
+                <News/>
             </Route>
             <Route path="*">
                 <NotFoundPage/>

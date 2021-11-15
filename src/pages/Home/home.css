@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap");
+
+.profile{
+    background-image: url("../../assets/bg-img.png");
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+}
+
+.btn-primary{
+    background-color: #F47522; 
+    border-color: #F47522;
+    color: white;
+    margin-top: 2px;
+}
+.btn-primary:hover{
+    background-color: #dd5b05;
+    border-color: #dd5b05;
+}
+
+.rounded-circle{   
+    width: 350px; 
+    height: 350px !important;
+    margin-top: 5px;
+}
+
+#bio{
+    color: #19345E;
+    padding-top: 39px;
+}
+
+h1 {
+    font-size: 85px;
+    font-weight: 600;
+}
+.short-text{
+    font-weight: 600; 
+    font-size: 35px;
+}

@@ -1,0 +1,15 @@
+#logoAlta{
+    top: 50;
+    opacity: 0.5;
+    width: 45vh;
+}
+
+.sideImage{
+    background-image: url("../assets/charles-rRWiVQzLm7k-unsplash.jpg");
+    background-size: cover;
+}
+
+.overlay{
+    background: rgba(11, 11, 111, 0.50);
+    z-index: 2;
+}

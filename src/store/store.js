@@ -1,10 +1,10 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import todoSlice from './todoSlice';
+import formSlice from './formSlice';
 
 const reducers = combineReducers({
-    todo: todoSlice,
+    form: formSlice,
 })
 
 const persistConfig = {
