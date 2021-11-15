@@ -127,7 +127,7 @@ function Form() {
               className="form-control"
               id="fullname"
               placeholder="Your full name here.."
-              required
+
             />
           <span className="error-msg">{errMsg.nama}</span>
           </div>
@@ -143,7 +143,7 @@ function Form() {
               className="form-control"
               id="email"
               placeholder="example@domain.com"
-              required
+              
             />
           <span className="error-msg">{errMsg.email}</span>
           </div>
@@ -159,7 +159,7 @@ function Form() {
               className="form-control"
               id="phone"
               placeholder="085737xxxxxx"
-              required
+              
             />
           <span className="error-msg">{errMsg.phone}</span>
           </div>
