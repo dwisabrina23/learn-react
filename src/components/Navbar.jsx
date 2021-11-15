@@ -7,7 +7,7 @@ export default function Navbar() {
   let history = useHistory();
   const handleClick = () => {
     history.push("/");
-    history.push("/contact-us");
+    history.push("/contact");
     history.push("/review");
     history.push("/news");
     history.push("/about");

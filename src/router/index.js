@@ -14,7 +14,7 @@ function Router(props) {
                 <Navbar/>
                 <Home/>
             </Route>
-            <Route exact path="/contact-us">
+            <Route exact path="/contact">
                 <Navbar/>
                 <Contact/>
             </Route>

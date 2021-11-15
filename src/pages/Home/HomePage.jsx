@@ -1,10 +1,15 @@
 import React from "react";
 import roundPhoto from "../../assets/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg";
-
+import './home.css';
+import {useHistory} from "react-router-dom"
 export default function Home() {
+  const history = useHistory();
+  const handleClick = () =>{
+    history.push("/contact");
+  }
   return (
     <div>
-      <div className="profile">
+      <div className="profile h-100">
         <section className="bio">
           <div className="container m-auto">
             <div className="row p-4 "></div>
@@ -20,7 +25,7 @@ export default function Home() {
                 <h3>Hi, My name is</h3>
                 <h1>Anne Sullivan</h1>
                 <p className="short-text">I build things for the web</p>
-                <button type="button" className="btn btn-primary rounded-pill">
+                <button type="button" className="btn btn-primary rounded-pill" onClick={handleClick}>
                   Get In Touch
                 </button>
               </div>

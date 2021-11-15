@@ -49,7 +49,7 @@ function Form() {
     }
     //validate nationality
     if(name === 'nationality' && value !== ""){
-      setErrMsg({...formError, nama: "pilih salah satu"})
+      setErrMsg({...formError, nationality: ""})
     }
   };
 
@@ -110,8 +110,8 @@ function Form() {
   return (
     <div>
       <div
-        className="col-md-5"
-        style={{ marginLeft: "150px", marginTop: "39px" }}
+        className="col-md-7 col-sm-7"
+        style={{ marginLeft: "50px", marginTop: "39px" }}
       >
         <h2 className="mb-3">Contact Us</h2>
         <form className="form needs-validation" onSubmit={handleSubmit}>
@@ -190,6 +190,8 @@ function Form() {
               name="message"
               value={data.message}
               onChange={handleChange}
+              rows={5}
+              cols={30}
               className="form-control"
               placeholder="Leave your message here"
               id="message"
@@ -198,7 +200,6 @@ function Form() {
 
           <button
             type="submit"
-            onclick="passValues()"
             className="submit btn btn-primary rounded-pill mb-3"
           >
             Submit

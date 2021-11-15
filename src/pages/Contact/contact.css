@@ -76,9 +76,9 @@ input::placeholder{
 
 @media (max-width: 800px) {
 	#img-banner {
-		height: 40%;
+		height: 100%;
 	}
 	#logo-alta{
-		width: 50%;
+		width: 40%;
 	}
 }

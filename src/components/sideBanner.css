@@ -1,12 +1,12 @@
-#logoAlta{
-    top: 50;
-    opacity: 0.5;
+#logo-alta{
     width: 45vh;
 }
 
-.sideImage{
-    background-image: url("../assets/charles-rRWiVQzLm7k-unsplash.jpg");
+.side-images{
+    background-image: url('../assets/charles-rRWiVQzLm7k-unsplash.jpg');
     background-size: cover;
+    width: 100%;
+    height: 100vh;
 }
 
 .overlay{

@@ -1,7 +1,23 @@
 import React from "react";
 import './review.css';
+import { useHistory } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { resetForm } from "../../store/formSlice";
+import dotImg from '../../assets/img-dot.png'
 
-function ReviewPage(props) {
+function ReviewPage() {
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  //bind data form from store
+  const form = useSelector((state) => state.form.forms)
+  console.log(form)
+
+  const handleClose = (event) => {
+    event.preventDefault();
+    dispatch(resetForm());
+    history.push("/");
+  }
   return (
     <div>
       <div className="card col-md-8 justify-content-center">
@@ -9,22 +25,22 @@ function ReviewPage(props) {
           <tr className="mb-3">
             <td className="label">Full Name</td>
             <td>:</td>
-            <td id="fullname"></td>
+            <td id="fullname">{form.nama}</td>
           </tr>
           <tr>
             <td className="label">Email Adress</td>
             <td>:</td>
-            <td id="email"></td>
+            <td id="email">{form.email}</td>
           </tr>
           <tr>
             <td className="label">Phone Number</td>
             <td>:</td>
-            <td id="phone"></td>
+            <td id="phone">{form.phone}</td>
           </tr>
           <tr>
             <td className="label">Nationality</td>
             <td>:</td>
-            <td id="nationality"></td>
+            <td id="nationality">{form.nationality}</td>
           </tr>
           <tr id="invisible">
             <td>&nbsp;</td>
@@ -33,7 +49,7 @@ function ReviewPage(props) {
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td colspan="3" id="message"></td>
+            <td colspan="3" id="message">{form.message}</td>
           </tr>
         </table>
 
@@ -49,6 +65,7 @@ function ReviewPage(props) {
           <form action="index.html">
             <button
               type="submit"
+              onClick={handleClose}
               className="btn rounded-pill px-4 py-2 font-weight-normal"
             >
               Home
@@ -58,7 +75,7 @@ function ReviewPage(props) {
       </div>
       <footer class="container-fluid" style={{"backgroundColor": "#EDF6FF", "height": "190px",  "width": "100%"}}>
         <div>
-            <img src="assets/img/img-dot.png" alt="" style={{"paddingLeft": "160px", "paddingTop": "30px"}}/>
+            <img src={dotImg} alt="" style={{"paddingLeft": "160px", "paddingTop": "30px"}}/>
         </div>
     </footer>
     </div>

@@ -3,10 +3,14 @@
 .profile{
     background-image: url("../../assets/bg-img.png");
     background-size: cover;
-    font-family: "Roboto", sans-serif;
     overflow: hidden;
+    font-family: "Roboto", sans-serif;
+    height: 100% !important;
+    background-repeat: no-repeat;
 }
-
+.bio{
+    height: 100% !important;
+}
 .btn-primary{
     background-color: #F47522; 
     border-color: #F47522;
