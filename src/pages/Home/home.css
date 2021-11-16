@@ -2,12 +2,14 @@
 
 .profile{
     background-image: url("../../assets/bg-img.png");
-    background-size: cover;
-    overflow: hidden;
     font-family: "Roboto", sans-serif;
     height: 100% !important;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: fixed;
+    width: 100%;
 }
+
 .bio{
     height: 100% !important;
 }

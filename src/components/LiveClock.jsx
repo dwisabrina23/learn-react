@@ -1,5 +1,5 @@
 import React from 'react';
-import Clock from 'react-live-clock';
+import Clock from "react-live-clock";
 
 function LiveClock() {
     return (

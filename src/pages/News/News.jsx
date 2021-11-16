@@ -33,7 +33,7 @@ function News() {
   }
   return (
     <div>
-	<h1 className="display-4 text-center">NEWS</h1>
+	    <h1 className="display-4 text-center">NEWS</h1>
       <div
         className="container-fluid d-flex justify-content-around"
         style={{ top: "20px" }}
