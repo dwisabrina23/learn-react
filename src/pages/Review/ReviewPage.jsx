@@ -49,7 +49,7 @@ function ReviewPage() {
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td colspan="3" id="message">{form.message}</td>
+            <td colSpan="3" id="message">{form.message}</td>
           </tr>
         </table>
 
@@ -73,7 +73,7 @@ function ReviewPage() {
           </form>
         </div>
       </div>
-      <footer class="container-fluid" style={{"backgroundColor": "#EDF6FF", "height": "190px",  "width": "100%"}}>
+      <footer className="container-fluid" style={{"backgroundColor": "#EDF6FF", "height": "190px",  "width": "100%"}}>
         <div>
             <img src={dotImg} alt="" style={{"paddingLeft": "160px", "paddingTop": "30px"}}/>
         </div>
