@@ -6,16 +6,17 @@ import {useQuery, useLazyQuery} from '@apollo/client'
 import {GetAllPassanger, SearchById} from "../graphQL/Query";
 
 function Home() {
-    const {
-        data: allData, loading: loadingAllData, error: errorAllData} = useQuery(GetAllPassanger);
+    const {data: allData, loading: loadingAllData, error: errorAllData} = useQuery(GetAllPassanger);
     console.log(allData);
     const [getPassangerById, {data: dataId, loading: loadingDataId, errorId}] = useLazyQuery(SearchById);
     console.log("data id: " + dataId)
+
+    //initialize state
     // const [dataPassenger, setDataPassenger] = useState([]);
     const [idPassenger, setIdPassenger] = useState(null)
 
     // const getAllData = () => {
-    //     setDataPassenger(allData?.passenger);
+    //     setDataPassenger(allData?.passanger);
     // }
 
     const handleSearchId = (e) => {
@@ -45,8 +46,10 @@ function Home() {
         //     data: [...this.state.data, newData]  
         // });
     };
-    if (errorAllData){
+    if (errorAllData || errorId){
         console.log(errorAllData)
+        console.log(errorId)
+        return null;
     }
     if(loadingAllData || loadingDataId){
         return(
@@ -70,16 +73,13 @@ function Home() {
                     onClick={handleSearchId}
                 >Search</button>
             </div>
-            
-            {/* <button 
-                className='btn btn-success mb-3'
-                onClick={getAllData}
-            >List Passenger</button> */}
             <br/>
-            <ListPassenger 
-                data={dataId ? dataId.passanger : allData.passanger}
-                hapusPengunjung={hapusPengunjung}
-            />
+            {!errorAllData && !loadingAllData && !loadingDataId && (
+                <ListPassenger
+                    data={dataId ? dataId?.passanger : allData?.passanger}
+                    hapusPengunjung={hapusPengunjung}
+                />
+            )}
             <PassengerInput
                 tambahPengunjung={tambahPengunjung}
             />
