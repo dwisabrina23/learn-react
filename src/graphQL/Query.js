@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
-export const GetAllPassanger = gql`
-    query getAllPassanger {
-        passanger {
+export const GetAllPassenger = gql`
+    query getAllPassenger {
+        Passenger {
         id
         jk
         nama
@@ -13,7 +13,7 @@ export const GetAllPassanger = gql`
 
 export const SearchById = gql`
     query searchById($id: Int) {
-        passanger(where: {id: {_eq: $id}}) {
+        Passenger(where: {id: {_eq: $id}}) {
         id
         jk
         nama
