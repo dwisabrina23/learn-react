@@ -5,7 +5,7 @@ function PassengerInput(props) {
   const [state, setState] = useState({
     nama: "",
     umur: "",
-    jenisKelamin: "Pria",
+    jk: "Pria",
     editing: true,
   })
 
@@ -17,7 +17,7 @@ function PassengerInput(props) {
   }
 
   const handleSubmit = (e) => {
-    if (state.nama.trim() && state.umur && state.jenisKelamin) {
+    if (state.nama.trim() && state.umur && state.jk) {
       const umur = state.umur
       if (umur >= 75 || umur <= 12) {
         alert("Umur tidak sesuai")
@@ -25,14 +25,14 @@ function PassengerInput(props) {
         const newData = {
           nama: state.nama,
           umur: state.umur,
-          jenisKelamin: state.jenisKelamin,
+          jk: state.jk,
         }
         props.tambahPengunjung(newData)
         setState({
           ...state,
           nama: "",
           umur: "",
-          jenisKelamin: "Pria",
+          jk: "Pria",
         })
       }
     } else {
@@ -71,7 +71,7 @@ function PassengerInput(props) {
         <p>Masukkan Umur Anda</p>
         <input type="number" className="input-text" placeholder="Umur anda ..." value={state.umur} name="umur" onChange={onChange} />
         <p>Masukkan Jenis Kelamin Anda</p>
-        <select onChange={onChange} name="jenisKelamin">
+        <select onChange={onChange} name="jk">
           <option value="Pria" selected>
             Pria
           </option>
