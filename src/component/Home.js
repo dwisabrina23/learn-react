@@ -2,34 +2,38 @@ import React, {useEffect, useState} from "react";
 import PassengerInput from './PassengerInput';
 import ListPassenger from './ListPassenger';
 import Header from './Header';
-import {useQuery, useLazyQuery, useMutation} from '@apollo/client'
-import {GetAllPassenger, SearchById} from "../graphQL/Query";
-import {DeletePassenger, EditPassenger, InsertPassenger} from "../graphQL/Mutation";
+import useSearchPassenger from "../hooks/useSearchPassenger";
+import useSubsPassenger from "../hooks/useSubsPassenger";
+import useEditPassenger from "../hooks/useEditPassenger";
+import useDeletePassenger from "../hooks/useDeletePassenger";
+import useInsertPassenger from "../hooks/useInsertPassenger";
 
 function Home() {
-    const {data: allData, loading: loadingAllData, error: errorAllData} = useQuery(GetAllPassenger);
-    console.log(allData);
-    const [getPassangerById, {data: dataId, loading: loadingDataId, errorId}] = useLazyQuery(SearchById);
-    const [deletePassenger, {loading: loadingDelete}] = useMutation(DeletePassenger, {refetchQueries: [GetAllPassenger]});
-    const [insertPassenger, {loading: loadingInsert}] = useMutation(InsertPassenger, {refetchQueries: [GetAllPassenger]});
-    const [updatePassenger, {loading: loadingUpdate}] = useMutation(EditPassenger, {refetchQueries: [GetAllPassenger]});
-    
-
-    useEffect(() => {
-        if(allData) {
-            setDataPassenger(allData.Passenger);
-        }
-        if(errorAllData){
-            console.log("error:" + errorAllData);
-            return null;
-        }
-    }, [allData, errorAllData])
     //initialize state
     const [dataPassenger, setDataPassenger] = useState([]);
-    const [idPassenger, setIdPassenger] = useState(null)
+    const [idPassenger, setIdPassenger] = useState(null);
 
+    const {getPassengerById, searchData, searchError, searchLoading, subscribePassenger} = useSearchPassenger();
+    const {subsData, subsLoading, subsError} = useSubsPassenger();
+    const {editPassenger, editLoading} = useEditPassenger();
+    const {deletePassenger, delLoading} = useDeletePassenger();
+    const {insertPassenger, insLoading} = useInsertPassenger();
+    
+    useEffect(() => {
+        if(searchData) {
+            subscribePassenger();
+            setDataPassenger(searchData.Passenger);
+        }
+        if(searchError || subsError){
+            console.log("error when search:" + searchError);
+            console.log("error when get data:" + subsError);
+            return null;
+        }
+    }, [searchData, searchError, subsError])
+
+    //event handling
     const handleSearchId = (e) => {
-        getPassangerById({
+        getPassengerById({
             variables:{
                 id: idPassenger,
             }
@@ -57,7 +61,7 @@ function Home() {
     };
 
     const editPengunjung = (editUser) => {
-        updatePassenger({
+        editPassenger({
             variables:{
                 id: editUser.id,
                 nama: editUser.nama,
@@ -66,12 +70,8 @@ function Home() {
             }
         })
     }
-    if (errorAllData || errorId){
-        console.log(errorAllData)
-        console.log(errorId)
-        return null;
-    }
-    if(loadingAllData || loadingDataId){
+
+    if(searchLoading || subsLoading){
         return(
             <div>
                 <p className='text-center'>Loading...</p>
@@ -94,9 +94,9 @@ function Home() {
                 >Search</button>
             </div>
             <br/>
-            {!errorAllData && !loadingAllData && !loadingDataId && (
+            {!subsError && !subsLoading && !searchLoading && (
                 <ListPassenger
-                    data={dataId ? dataId?.Passenger : allData?.Passenger}
+                    data={searchData ? searchData?.Passenger : subsData?.Passenger}
                     hapusPengunjung={hapusPengunjung}
                     editPengunjung={editPengunjung}
                 />
